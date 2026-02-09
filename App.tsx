@@ -56,8 +56,7 @@ const NAV_LINKS = [
   { name: 'Como funciona', href: '#process' },
   { name: 'Cases', href: '#cases' },
   { name: 'Diferenciais', href: '#benefits' },
-  { name: 'Depoimentos', href: '#testimonials' },
-  { name: 'Sobre Mim', href: '#about-me' },
+  { name: 'Sobre a FitPro', href: '#about-me' },
 ];
 
 const PROCESS_STEPS = [
@@ -455,7 +454,7 @@ const Navbar: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
                 }}
                 className="text-brand-orange font-bold text-left text-lg"
               >
-                Solicitar Diagnóstico
+                Falar com a FITPRO
               </button>
             </div>
           </motion.div>
@@ -504,7 +503,7 @@ const Hero: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
                 onClick={onOpenModal}
                 className="group px-8 py-4 bg-brand-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all flex items-center justify-center gap-2"
               >
-                Solicitar Diagnóstico
+                Falar com a FITPRO
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a 
@@ -765,7 +764,7 @@ const GALLERY_IMAGES = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-24 bg-brand-dark border-t border-white/5">
+    <section id="testimonials" className="py-24 bg-brand-dark border-t border-white/5 hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading subtitle="Depoimentos" title="O que dizem nossos clientes" align="center" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
