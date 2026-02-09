@@ -787,7 +787,7 @@ const AboutMe: React.FC = () => {
   return (
     <section id="about-me" className="py-24 bg-brand-dark relative">
       <div className="max-w-4xl mx-auto px-6">
-        <SectionHeading subtitle="Sobre Mim" title="Minha trajetória" align="center" />
+        <SectionHeading subtitle="Sobre a FitPro" title="Nossa Trajetória" align="center" />
         <div className="space-y-6 text-gray-300 leading-relaxed">
           <p>Sou profissional de Educação Física formado pela Universidade Federal de Pernambuco (UFPE) e atuo há mais de 20 anos no mercado fitness. Minha trajetória começou muito cedo, ainda na adolescência, a partir do esporte e da musculação — e desde então, o fitness sempre fez parte da minha vida, não apenas como prática, mas como estudo, trabalho e propósito.</p>
           <p>Ao longo dos anos, atuei em academias de diferentes portes, desde estruturas menores até grandes operações com milhares de alunos, assumindo funções técnicas, de coordenação e liderança de equipes. Aos 24 anos, iniciei o projeto e implantei uma academia do zero, participando de todas as etapas do processo — da concepção e obra ao layout, escolha de equipamentos e operação do negócio. Essa experiência ampliou de forma decisiva minha compreensão sobre o funcionamento real de um espaço fitness.</p>
