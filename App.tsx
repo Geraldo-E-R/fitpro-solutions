@@ -32,10 +32,10 @@ import GALERIA2 from './assets/img/ACADEMIA FOTO 2.jpeg';
 import GALERIA3 from './assets/img/ACADEMIA FOTO 3.jpeg';
 import GALERIA4 from './assets/img/ACADEMIA FOTO 4.jpeg';
 import GALERIA5 from './assets/img/ACADEMIA FOTO 5.jpg';
-import  SAOMIGUEL from './assets/img/TujuBoutiqueHotel.png';
-import  GUADALUPE from './assets/img/CondominioGuadalupe.png';
-import  CASALTA from './assets/img/CasaAlta.png';
-import  CASASERRAMBI from './assets/img/CasaSerrambi.png';
+import  SAOMIGUEL from './assets/img/TujuFOTO.png';
+import  GUADALUPE from './assets/img/GuadalupeFOTO.png';
+import  CASALTA from './assets/img/Casa AltaFOTO.png';
+import  CASASERRAMBI from './assets/img/SerrambiFOTO.png';
 import FitproLogo from './FitproLogo';
 
 // --- Types ---
@@ -56,6 +56,8 @@ const NAV_LINKS = [
   { name: 'Como funciona', href: '#process' },
   { name: 'Cases', href: '#cases' },
   { name: 'Diferenciais', href: '#benefits' },
+  { name: 'Depoimentos', href: '#testimonials' },
+  { name: 'Sobre Mim', href: '#about-me' },
 ];
 
 const PROCESS_STEPS = [
@@ -86,8 +88,8 @@ const CASES: CaseStudy[] = [
     id: 1,
     title: "Tuju Boutique Hotel",
     location: "São Miguel dos Milagres - AL",
-    size: "78m²",
-    description: "Destino reconhecido por sua beleza natural, o hotel conta com uma academia de 78m². O espaço foi planejado para oferecer conforto e uma experiência completa aos hóspedes, com maquinário bem distribuído e funcionalidade em cada detalhe.",
+    size: "94m²",
+    description: "Destino reconhecido por sua beleza natural, o hotel conta com uma academia de 94m². O espaço foi planejado para oferecer conforto e uma experiência completa aos hóspedes, com maquinário bem distribuído e funcionalidade em cada detalhe.",
     image: SAOMIGUEL
   },
   {
@@ -133,6 +135,25 @@ const BENEFITS = [
     title: "Gestão Completa",
     desc: "Assumimos toda a gestão, poupando seu tempo e garantindo qualidade em cada etapa."
   }
+];
+
+const TESTIMONIALS = [
+  {
+    author: "Síndico de Condomínio",
+    text: "Depois da entrega, a academia entrou na rotina do prédio. Espaço bem organizado, fluxo fácil e moradores elogiando diariamente.",
+  },
+  {
+    author: "Gestor de Hotel",
+    text: "Ficou bonita e funcional. As avaliações dos hóspedes melhoraram e a operação segue tranquila, sem dor de cabeça.",
+  },
+  {
+    author: "Incorporador",
+    text: "O projeto reforçou o posicionamento do empreendimento. Mostrou valor nas visitas e ajudou a converter unidades com segurança.",
+  },
+  {
+    author: "Dono de Academia",
+    text: "O layout deixou a circulação fluida. A experiência dos alunos melhorou sem precisar trocar todo o parque de equipamentos.",
+  },
 ];
 
 // --- Utilities ---
@@ -231,7 +252,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             className="w-full max-w-lg bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden relative z-10"
           >
             <div className="flex justify-between items-center p-6 border-b border-white/5">
-              <h3 className="text-xl font-bold text-white">Solicitar Diagnóstico</h3>
+              <h3 className="text-xl font-bold text-white">Falar com a FITPRO</h3>
               <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
                 <X size={24} />
               </button>
@@ -475,7 +496,7 @@ const Hero: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl font-light">
-              Especialistas em transformar espaços em academias de alto valor agregado para residências, condomínios, pousadas, hotéis e clubes.
+              Especialistas em transformar espaços em academias de alto valor agregado para residências, condomínios, pousadas, hotéis, clubes, academias comerciais e projetos de grande porte.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -643,7 +664,7 @@ const Benefits: React.FC = () => {
           <div className="order-1 md:order-2">
             <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" />
             <p className="text-gray-300 mb-6">
-              Nossa abordagem vai além da venda de equipamentos. Entregamos uma consultoria completa que valoriza seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento.
+              Entregamos uma consultoria completa e estratégica, pensada para valorizar o seu imóvel, garantir a melhor experiência para os usuários e otimizar cada etapa do seu investimento — do planejamento à entrega final.
             </p>
             
             <div className="mt-8 space-y-4">
@@ -731,19 +752,54 @@ const Cases: React.FC = () => {
 };
 
 const GALLERY_IMAGES = [
-  { src: DSC01927, alt: 'Galeria FitPro 1' },
-  { src: DSC01934, alt: 'Galeria FitPro 2' },
-  { src: DSC01957, alt: 'Galeria FitPro 3' },
-  { src: IMG_0220, alt: 'Galeria FitPro 4' },
-  { src: IMG_1861, alt: 'Galeria FitPro 5' },
-  { src: IMG_1874, alt: 'Galeria FitPro 6' },
-  { src: IMG_1876, alt: 'Galeria FitPro 7' },
-  { src: GALERIA1, alt: 'Academia geral' },
-  { src: GALERIA2, alt: 'Halteres Alpha Strong' },
-  { src: GALERIA3, alt: 'Equipamento de musculação' },
   { src: GALERIA4, alt: 'Visão ampla academia' },
+  { src: GALERIA1, alt: 'Academia geral' },
+  { src: GALERIA3, alt: 'Equipamento de musculação' },
+  { src: GALERIA2, alt: 'Halteres Alpha Strong' },
   { src: GALERIA5, alt: 'Exercício leg press' },
+  { src: DSC01927, alt: 'Ambiente planejado 1' },
+  { src: DSC01934, alt: 'Ambiente planejado 2' },
+  { src: DSC01957, alt: 'Ambiente planejado 3' },
+  { src: IMG_0220, alt: 'Detalhe de layout' },
 ];
+
+const Testimonials: React.FC = () => {
+  return (
+    <section id="testimonials" className="py-24 bg-brand-dark border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeading subtitle="Depoimentos" title="O que dizem nossos clientes" align="center" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          {TESTIMONIALS.map((t, idx) => (
+            <div
+              key={idx}
+              className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
+            >
+              <p className="text-gray-300 mb-4">{t.text}</p>
+              <p className="text-sm text-gray-400 font-semibold">{t.author}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const AboutMe: React.FC = () => {
+  return (
+    <section id="about-me" className="py-24 bg-brand-dark relative">
+      <div className="max-w-4xl mx-auto px-6">
+        <SectionHeading subtitle="Sobre Mim" title="Minha trajetória" align="center" />
+        <div className="space-y-6 text-gray-300 leading-relaxed">
+          <p>Sou profissional de Educação Física formado pela Universidade Federal de Pernambuco (UFPE) e atuo há mais de 20 anos no mercado fitness. Minha trajetória começou muito cedo, ainda na adolescência, a partir do esporte e da musculação — e desde então, o fitness sempre fez parte da minha vida, não apenas como prática, mas como estudo, trabalho e propósito.</p>
+          <p>Ao longo dos anos, atuei em academias de diferentes portes, desde estruturas menores até grandes operações com milhares de alunos, assumindo funções técnicas, de coordenação e liderança de equipes. Aos 24 anos, iniciei o projeto e implantei uma academia do zero, participando de todas as etapas do processo — da concepção e obra ao layout, escolha de equipamentos e operação do negócio. Essa experiência ampliou de forma decisiva minha compreensão sobre o funcionamento real de um espaço fitness.</p>
+          <p>Paralelamente, sempre mantive uma atuação intensa como personal trainer, trabalhando em academias de alto padrão e com um público exigente. Isso me permitiu vivenciar, no dia a dia, equipamentos de diferentes fabricantes, testar layouts diversos e observar, na prática, o que funciona e o que não funciona para quem treina.</p>
+          <p>Foi justamente dessa bagagem — prática, técnica e crítica — que surgiu a FITPRO. A empresa nasceu de uma demanda natural de alunos e clientes que buscavam uma orientação especializada para montar academias residenciais e privadas, com mais critério, segurança e sem conflitos de interesse.</p>
+          <p>Hoje, à frente da FITPRO, aplico toda essa experiência para oferecer uma consultoria técnica independente, focada em soluções personalizadas, bem planejadas e alinhadas aos objetivos de cada cliente, sempre priorizando funcionalidade, eficiência do investimento e experiência do usuário.</p>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Gallery: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -941,6 +997,8 @@ const App: React.FC = () => {
       <Benefits />
       <Cases />
       <Gallery />
+      <Testimonials />
+      <AboutMe />
       <Contact />
       <Footer />
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
