@@ -36,6 +36,7 @@ import  SAOMIGUEL from './assets/img/TujuFOTO.png';
 import  GUADALUPE from './assets/img/GuadalupeFOTO.png';
 import  CASALTA from './assets/img/Casa AltaFOTO.png';
 import  CASASERRAMBI from './assets/img/SerrambiFOTO.png';
+import SOCIOFUNDADOR from './assets/img/SOCIOFUNDADOR.jpeg';
 import FitproLogo from './FitproLogo';
 
 // --- Types ---
@@ -662,9 +663,7 @@ const Benefits: React.FC = () => {
           </div>
           <div className="order-1 md:order-2">
             <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" />
-            <p className="text-gray-300 mb-6">
-              Entregamos uma consultoria completa e estratégica, pensada para valorizar o seu imóvel, garantir a melhor experiência para os usuários e otimizar cada etapa do seu investimento — do planejamento à entrega final.
-            </p>
+            <p className="text-gray-300 mb-6">Aqui você não fala com um vendedor defendendo o próprio produto.<br />Aqui você fala com quem defende o seu interesse.<br />Entregamos uma consultoria completa que valoriza o seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento.</p>
             
             <div className="mt-8 space-y-4">
               <div className="flex items-center gap-3">
@@ -785,15 +784,44 @@ const Testimonials: React.FC = () => {
 
 const AboutMe: React.FC = () => {
   return (
-    <section id="about-me" className="py-24 bg-brand-dark relative">
-      <div className="max-w-4xl mx-auto px-6">
-        <SectionHeading subtitle="Sobre a FitPro" title="Nossa Trajetória" align="center" />
-        <div className="space-y-6 text-gray-300 leading-relaxed">
-          <p>Sou profissional de Educação Física formado pela Universidade Federal de Pernambuco (UFPE) e atuo há mais de 20 anos no mercado fitness. Minha trajetória começou muito cedo, ainda na adolescência, a partir do esporte e da musculação — e desde então, o fitness sempre fez parte da minha vida, não apenas como prática, mas como estudo, trabalho e propósito.</p>
-          <p>Ao longo dos anos, atuei em academias de diferentes portes, desde estruturas menores até grandes operações com milhares de alunos, assumindo funções técnicas, de coordenação e liderança de equipes. Aos 24 anos, iniciei o projeto e implantei uma academia do zero, participando de todas as etapas do processo — da concepção e obra ao layout, escolha de equipamentos e operação do negócio. Essa experiência ampliou de forma decisiva minha compreensão sobre o funcionamento real de um espaço fitness.</p>
-          <p>Paralelamente, sempre mantive uma atuação intensa como personal trainer, trabalhando em academias de alto padrão e com um público exigente. Isso me permitiu vivenciar, no dia a dia, equipamentos de diferentes fabricantes, testar layouts diversos e observar, na prática, o que funciona e o que não funciona para quem treina.</p>
-          <p>Foi justamente dessa bagagem — prática, técnica e crítica — que surgiu a FITPRO. A empresa nasceu de uma demanda natural de alunos e clientes que buscavam uma orientação especializada para montar academias residenciais e privadas, com mais critério, segurança e sem conflitos de interesse.</p>
-          <p>Hoje, à frente da FITPRO, aplico toda essa experiência para oferecer uma consultoria técnica independente, focada em soluções personalizadas, bem planejadas e alinhadas aos objetivos de cada cliente, sempre priorizando funcionalidade, eficiência do investimento e experiência do usuário.</p>
+    <section id="about-me" className="py-24 bg-brand-dark">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <motion.div 
+            className="w-full max-w-sm mx-auto"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl group">
+              <img src={SOCIOFUNDADOR} alt="Sócio Fundador da FitPro" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                <p className="text-brand-orange font-semibold text-sm uppercase tracking-wider">Sócio Fundador</p>
+                <h3 className="text-3xl font-bold text-white mt-1">Geraldo Rocha</h3>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <SectionHeading subtitle="Sobre a FitPro" title="Nossa Missão é o Seu Resultado" />
+            <div className="text-gray-300 space-y-5 text-lg leading-relaxed">
+              <p>
+                Sou profissional de Educação Física formado pela UFPE e atuo há mais de 20 anos no mercado fitness. Tenho experiência em academias de diferentes portes, passando por funções técnicas, coordenação e liderança de equipes. Aos 24 anos, implantei uma academia do zero, acompanhando todas as etapas — da obra à operação.
+              </p>
+              <p>
+                Também atuei por muitos anos como personal trainer em academias de alto padrão, o que me deu vivência prática com equipamentos, layouts e o que realmente funciona para quem treina.
+              </p>
+              <p>
+                A FITPRO nasceu dessa bagagem e da demanda de clientes que buscavam uma consultoria independente para montar academias residenciais e privadas com critério e segurança. Hoje, lidero a FITPRO oferecendo soluções personalizadas, bem planejadas e alinhadas aos objetivos de cada cliente, priorizando funcionalidade, investimento eficiente e experiência do usuário.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
