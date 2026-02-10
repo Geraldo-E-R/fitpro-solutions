@@ -57,7 +57,7 @@ const NAV_LINKS = [
   { name: 'Como funciona', href: '#process' },
   { name: 'Cases', href: '#cases' },
   { name: 'Diferenciais', href: '#benefits' },
-  { name: 'Sobre a FitPro', href: '#about-me' },
+  { name: 'Nossa História', href: '#about-me' },
 ];
 
 const PROCESS_STEPS = [
@@ -809,16 +809,20 @@ const AboutMe: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <SectionHeading subtitle="Sobre a FitPro" title="Nossa Missão é o Seu Resultado" />
+            <SectionHeading subtitle="Nossa História" title="" />
             <div className="text-gray-300 space-y-5 text-lg leading-relaxed">
               <p>
-                Sou profissional de Educação Física formado pela UFPE e atuo há mais de 20 anos no mercado fitness. Tenho experiência em academias de diferentes portes, passando por funções técnicas, coordenação e liderança de equipes. Aos 24 anos, implantei uma academia do zero, acompanhando todas as etapas — da obra à operação.
+               Sou profissional de Educação Física formado pela Universidade Federal de Pernambuco (UFPE) e atuo há mais de 20 anos no mercado fitness. Minha trajetória começou muito cedo, ainda na adolescência, a partir do esporte e da musculação — e desde então, o fitness sempre fez parte da minha vida, não apenas como prática, mas como estudo, trabalho e propósito.
+Ao longo dos anos, atuei em academias de diferentes portes, desde estruturas menores até grandes operações com milhares de alunos, assumindo funções técnicas, de coordenação e liderança de equipes. Aos 24 anos, iniciei o projeto e implantei uma academia do zero, participando de todas as etapas do processo — da concepção e obra ao layout, escolha de equipamentos e operação do negócio. Essa experiência ampliou de forma decisiva minha compreensão sobre o funcionamento real de um espaço fitness.
+Paralelamente, sempre mantive uma atuação intensa como personal trainer, trabalhando em academias de alto padrão e com um público exigente. Isso me permitiu vivenciar, no dia a dia, equipamentos de diferentes fabricantes, testar layouts diversos e observar, na prática, o que funciona e o que não funciona para quem treina.
+Foi justamente dessa bagagem — prática, técnica e crítica — que surgiu a FITPRO. A empresa nasceu de uma demanda natural de alunos e clientes que buscavam uma orientação especializada para montar academias residenciais e privadas, com mais critério, segurança e sem conflitos de interesse.
+Hoje, à frente da FITPRO, aplico toda essa experiência para oferecer uma consultoria técnica independente, focada em soluções personalizadas, bem planejadas e alinhadas aos objetivos de cada cliente, sempre priorizando funcionalidade, eficiência do investimento e experiência do usuário.
               </p>
               <p>
-                Também atuei por muitos anos como personal trainer em academias de alto padrão, o que me deu vivência prática com equipamentos, layouts e o que realmente funciona para quem treina.
+               
               </p>
               <p>
-                A FITPRO nasceu dessa bagagem e da demanda de clientes que buscavam uma consultoria independente para montar academias residenciais e privadas com critério e segurança. Hoje, lidero a FITPRO oferecendo soluções personalizadas, bem planejadas e alinhadas aos objetivos de cada cliente, priorizando funcionalidade, investimento eficiente e experiência do usuário.
+               
               </p>
             </div>
           </motion.div>
