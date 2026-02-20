@@ -23,7 +23,7 @@
     <meta property="og:image:alt" content="Logo FitPro Soluções em Academias - Soluções em academias" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="293" />
-    <meta property="og:image:height" content="100" />
+    <meta property="og:image:height" content="112" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@fitprosolutions" />
@@ -86,6 +86,34 @@
 }
 </script>
 <link rel="stylesheet" href="/index.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://fitprosolutions.com.br/#organization",
+            "name": "FitPro Soluções em Academias",
+            "url": "https://fitprosolutions.com.br/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://fitprosolutions.com.br/assets/img/og-fitpro.png",
+              "width": 293,
+              "height": 112
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fitprosolutions.com.br/#website",
+            "url": "https://fitprosolutions.com.br/",
+            "name": "FitPro Soluções em Academias",
+            "publisher": {
+              "@id": "https://fitprosolutions.com.br/#organization"
+            }
+          }
+        ]
+      }
+    </script>
 </head>
   <body class="bg-brand-dark text-white antialiased overflow-x-hidden">
     <div id="root"></div>
