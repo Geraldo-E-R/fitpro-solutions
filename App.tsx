@@ -17,7 +17,8 @@ import {
   Users,
   Loader2,
   Send,
-  MessageCircle
+  MessageCircle,
+  Truck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import DSC01927 from './assets/img/DSC01927.jpg';
@@ -80,6 +81,11 @@ const PROCESS_STEPS = [
     icon: <Presentation className="w-8 h-8" />,
     title: "Apresentação de Cenários",
     desc: "Oferecemos diferentes propostas de configuração, permitindo uma decisão segura, alinhada às expectativas e ao orçamento do cliente."
+  },
+  {
+    icon: <Truck className="w-8 h-8" />,
+    title: "Suporte na Negociação e Logística",
+    desc: "Atuamos como apoio estratégico na negociação com fornecedores, buscando melhores condições comerciais e alinhamento técnico. Acompanhamos a logística de entrega e montagem, garantindo prazos e conformidade com o projeto definido."
   }
 ];
 
@@ -94,7 +100,7 @@ const CASES: CaseStudy[] = [
   },
   {
     id: 2,
-    title: "Condomínio Guadalupe",
+    title: "Condomínio Praia de Guadalupe",
     location: "Praia de Guadalupe - PE",
     size: "147m²",
     description: "Situado no litoral sul de Pernambuco, o condomínio abriga uma academia de 147m². O projeto foi desenvolvido para ser amplo e convidativo, com maquinário de ponta que incentiva os condôminos a utilizarem o espaço de forma frequente e confortável.",
@@ -110,7 +116,7 @@ const CASES: CaseStudy[] = [
   },
   {
     id: 4,
-    title: "Casa Alta",
+    title: " Condomínio Casa Alta",
     location: "Recife - PE",
     size: "85m²",
     description: "Edifício icônico da Av. Boa Viagem. A academia, com 85m², nasceu de um projeto desafiador devido à planta irregular. O resultado foi um espaço amplo, funcional e acolhedor, que aumentou a adesão dos condôminos e trouxe ainda mais valor ao empreendimento.",
@@ -496,7 +502,7 @@ const Hero: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl font-light">
-              Especialistas em transformar espaços em academias de alto valor agregado para residências, condomínios, pousadas, hotéis, clubes, academias comerciais e projetos de grande porte.
+              
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -520,7 +526,7 @@ const Hero: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
       </div>
 
       {/* Stats/Social Proof Bottom Bar */}
-      <div className="absolute bottom-0 left-0 w-full border-t border-white/10 bg-brand-dark/50 backdrop-blur-md hidden md:block">
+      <div className="absolute bottom-0 left-0 w-full border-t border-white/10 bg-brand-dark/50 backdrop-blur-md hidden">
         <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between">
           <div className="flex items-center gap-3">
              <div className="p-2 bg-brand-orange/20 rounded-full text-brand-orange"><CheckCircle2 size={20}/></div>
@@ -565,9 +571,9 @@ const About: React.FC = () => {
     <section id="about" className="py-24 bg-brand-dark relative">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <SectionHeading subtitle="O que fazemos?" title="Soluções de alto padrão" />
+          <SectionHeading subtitle="O que fazemos?" title="" />
           <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            Na <span className="text-brand-orange font-bold">FitPro</span>, somos especialistas em criar e transformar espaços em academias de alto valor agregado. Oferecemos soluções personalizadas para residências, condomínios, pousadas, hotéis e clubes.
+            Na <span className="text-brand-orange font-bold">FitPro</span>, somos especialistas em transformar espaços em academias de alto valor agregado para residências, condomínios, pousadas, hotéis, clubes, academias comerciais e projetos de grande porte.
           </p>
           
           <div className="bg-white/5 border border-white/10 p-8 rounded-2xl relative overflow-hidden">
@@ -617,7 +623,7 @@ const Process: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading align="center" subtitle="Metodologia" title="Como funciona?" />
         
-        <div className="grid md:grid-cols-4 gap-8 relative mt-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 relative mt-16">
           {/* Connector Line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent z-0"></div>
 
@@ -646,9 +652,12 @@ const Process: React.FC = () => {
 const Benefits: React.FC = () => {
   return (
     <section id="benefits" className="py-24 bg-brand-dark relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 grid sm:grid-cols-2 gap-4">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+          <div className="max-w-3xl mx-auto">
+            <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" />
+            <p className="text-gray-300 mb-6">Aqui você não fala com um vendedor defendendo o próprio produto.<br />Aqui você fala com quem defende o seu interesse.<br />Entregamos uma consultoria completa que valoriza o seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento.</p>
+          </div>
+          <div className="order-2 md:order-1 grid sm:grid-cols-2 gap-4 hidden">
             {BENEFITS.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -661,24 +670,7 @@ const Benefits: React.FC = () => {
               </motion.div>
             ))}
           </div>
-          <div className="order-1 md:order-2">
-            <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" />
-            <p className="text-gray-300 mb-6">Aqui você não fala com um vendedor defendendo o próprio produto.<br />Aqui você fala com quem defende o seu interesse.<br />Entregamos uma consultoria completa que valoriza o seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento.</p>
-            
-            <div className="mt-8 space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl font-bold text-brand-orange">100%</span>
-                <p className="text-sm text-gray-400 uppercase tracking-wide">Foco em <br/>Resultados</p>
-              </div>
-              <div className="h-px bg-white/10 w-full max-w-xs"></div>
-              <div className="flex items-center gap-3">
-                 <h5 className="text-xl font-semibold text-white">Resultados:</h5>
-                 <p className="text-gray-400 text-sm">Satisfação dos Usuários, Equipamentos Profissionais e Liquidez do Empreendimento.</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
   );
 };
@@ -812,11 +804,11 @@ const AboutMe: React.FC = () => {
             <SectionHeading subtitle="Nossa História" title="" />
             <div className="text-gray-300 space-y-5 text-lg leading-relaxed">
               <p>
-               Sou profissional de Educação Física formado pela Universidade Federal de Pernambuco (UFPE) e atuo há mais de 20 anos no mercado fitness. Minha trajetória começou muito cedo, ainda na adolescência, a partir do esporte e da musculação — e desde então, o fitness sempre fez parte da minha vida, não apenas como prática, mas como estudo, trabalho e propósito.
-Ao longo dos anos, atuei em academias de diferentes portes, desde estruturas menores até grandes operações com milhares de alunos, assumindo funções técnicas, de coordenação e liderança de equipes. Aos 24 anos, iniciei o projeto e implantei uma academia do zero, participando de todas as etapas do processo — da concepção e obra ao layout, escolha de equipamentos e operação do negócio. Essa experiência ampliou de forma decisiva minha compreensão sobre o funcionamento real de um espaço fitness.
-Paralelamente, sempre mantive uma atuação intensa como personal trainer, trabalhando em academias de alto padrão e com um público exigente. Isso me permitiu vivenciar, no dia a dia, equipamentos de diferentes fabricantes, testar layouts diversos e observar, na prática, o que funciona e o que não funciona para quem treina.
-Foi justamente dessa bagagem — prática, técnica e crítica — que surgiu a FITPRO. A empresa nasceu de uma demanda natural de alunos e clientes que buscavam uma orientação especializada para montar academias residenciais e privadas, com mais critério, segurança e sem conflitos de interesse.
-Hoje, à frente da FITPRO, aplico toda essa experiência para oferecer uma consultoria técnica independente, focada em soluções personalizadas, bem planejadas e alinhadas aos objetivos de cada cliente, sempre priorizando funcionalidade, eficiência do investimento e experiência do usuário.
+               Sou profissional de Educação Física formado pela Universidade Federal de Pernambuco (UFPE) e atuo há mais de 20 anos no mercado fitness. Minha trajetória começou ainda na adolescência, por meio do esporte e da musculação, e desde então o fitness se tornou prática, estudo, trabalho e propósito.
+Ao longo dos anos, atuei em academias de diferentes portes, de estruturas menores a grandes operações com milhares de alunos, exercendo funções técnicas, coordenação e liderança de equipes. Aos 24 anos, projetei e implantei minha primeira academia do zero, participando de todas as etapas, da concepção e obra ao layout, escolha de equipamentos e operação do negócio. Essa vivência ampliou de forma decisiva minha compreensão sobre o funcionamento real de uma academia.
+Paralelamente, mantive forte atuação como personal trainer em academias de alto padrão, convivendo com diferentes fabricantes, layouts e públicos exigentes, o que me permitiu entender, na prática, o que realmente funciona.
+Foi dessa bagagem prática, técnica e crítica que surgiu a FITPRO. A empresa nasceu da demanda de clientes que buscavam orientação especializada para estruturar academias com mais critério, segurança e sem conflitos de interesse.
+Hoje, à frente da FITPRO, ofereço consultoria técnica independente, focada em soluções bem planejadas, alinhadas aos objetivos de cada cliente, priorizando funcionalidade, eficiência do investimento e experiência do usuário.
               </p>
               <p>
                
