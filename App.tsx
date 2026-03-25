@@ -38,6 +38,7 @@ import  GUADALUPE from './assets/img/GuadalupeFOTO.png';
 import  CASALTA from './assets/img/Casa AltaFOTO.png';
 import  CASASERRAMBI from './assets/img/SerrambiFOTO.png';
 import SOCIOFUNDADOR from './assets/img/SOCIOFUNDADOR.jpeg';
+import DIFERENCIAS from './assets/img/DIFERENCIAS.jpeg';
 import FitproLogo from './FitproLogo';
 
 // --- Types ---
@@ -653,9 +654,20 @@ const Benefits: React.FC = () => {
   return (
     <section id="benefits" className="py-24 bg-brand-dark relative">
       <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" />
-            <p className="text-gray-300 mb-6">Aqui você não fala com um vendedor defendendo o próprio produto.<br />Aqui você fala com quem defende o seu interesse.<br />Entregamos uma consultoria completa que valoriza o seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento.</p>
+          <div className="max-w-7xl mx-auto">
+            <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" align="center" />
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            >
+              <img 
+                src={DIFERENCIAS} 
+                alt="Diferenciais FITPRO" 
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
           </div>
           <div className="order-2 md:order-1 grid sm:grid-cols-2 gap-4 hidden">
             {BENEFITS.map((item, idx) => (
