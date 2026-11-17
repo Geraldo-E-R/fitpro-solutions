@@ -504,7 +504,7 @@ const Hero: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl font-light">
-              
+              Consultoria independente em projetos de academias.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
