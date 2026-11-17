@@ -1030,10 +1030,26 @@ const Contact: React.FC = () => {
                   <Mail size={32} />
                 </div>
                 <p className="text-white/80 text-sm mb-1 uppercase tracking-wide">E-mail</p>
-                <a href="mailto:comercial@fitprosolutions.com.br" className="text-xl md:text-2xl font-bold text-white hover:underline break-all">
+                <a href="mailto:comercial@fitprosolutions.com.br" className="text-base sm:text-xl md:text-2xl font-bold text-white hover:underline break-all">
                   comercial@fitprosolutions.com.br
                 </a>
              </div>
+           </div>
+
+           <div className="mt-10 pt-8 border-t border-white/20 flex flex-col items-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 text-white">
+                <Instagram size={32} />
+              </div>
+              <p className="text-white/80 text-sm mb-1 uppercase tracking-wide">Instagram</p>
+              <a
+                href="https://www.instagram.com/fitprosolucoes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl md:text-2xl font-bold text-white hover:underline"
+              >
+                @fitprosolucoes
+              </a>
+              <p className="text-white/60 text-sm mt-1">Veja nossos projetos</p>
            </div>
         </div>
       </div>
