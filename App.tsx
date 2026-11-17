@@ -86,7 +86,7 @@ const PROCESS_STEPS = [
   {
     icon: <Truck className="w-8 h-8" />,
     title: "Suporte na Negociação e Logística",
-    desc: "Atuamos como apoio estratégico na negociação com fornecedores, buscando melhores condições comerciais e alinhamento técnico. Acompanhamos a logística de entrega e montagem, garantindo prazos e conformidade com o projeto definido."
+    desc: "Apoio estratégico na negociação com fornecedores, buscando melhores condições comerciais e alinhamento técnico. Acompanhamos a logística de entrega e montagem."
   }
 ];
 
