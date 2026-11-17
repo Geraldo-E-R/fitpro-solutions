@@ -20,8 +20,7 @@ import {
   MessageCircle,
   Truck,
   Handshake,
-  Target,
-  PencilRuler
+  Fingerprint
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import DSC01927 from './assets/img/DSC01927.jpg';
@@ -661,13 +660,13 @@ const DIFERENCIAIS = [
     ]
   },
   {
-    icon: <Target className="w-9 h-9" />,
+    icon: <TrendingUp className="w-9 h-9" />,
     paragraphs: [
       "Entregamos uma consultoria completa que valoriza seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento."
     ]
   },
   {
-    icon: <PencilRuler className="w-9 h-9" />,
+    icon: <Fingerprint className="w-9 h-9" />,
     paragraphs: [
       "Desenvolvemos academias que refletem a identidade de cada cliente. Unimos conhecimento técnico, planejamento e criatividade para transformar necessidades em projetos exclusivos."
     ]
