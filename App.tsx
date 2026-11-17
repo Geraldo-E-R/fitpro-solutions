@@ -504,8 +504,8 @@ const Hero: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-300">e Valor</span>
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl font-light">
-              Consultoria independente em projetos de academias.
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-xl font-medium">
+              Consultoria <span className="text-brand-orange font-bold">independente</span> em projetos de academias.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
