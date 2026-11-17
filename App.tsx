@@ -18,7 +18,10 @@ import {
   Loader2,
   Send,
   MessageCircle,
-  Truck
+  Truck,
+  Handshake,
+  Target,
+  PencilRuler
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import DSC01927 from './assets/img/DSC01927.jpg';
@@ -38,7 +41,6 @@ import  GUADALUPE from './assets/img/GuadalupeFOTO.png';
 import  CASALTA from './assets/img/Casa AltaFOTO.png';
 import  CASASERRAMBI from './assets/img/SerrambiFOTO.png';
 import SOCIOFUNDADOR from './assets/img/SOCIOFUNDADOR.jpeg';
-import DIFERENCIAS from './assets/img/DIFERENCIAS.jpeg';
 import FitproLogo from './FitproLogo';
 
 // --- Types ---
@@ -650,24 +652,53 @@ const Process: React.FC = () => {
   );
 };
 
+const DIFERENCIAIS = [
+  {
+    icon: <Handshake className="w-9 h-9" />,
+    paragraphs: [
+      "Aqui você não fala com um vendedor defendendo o próprio produto.",
+      "Aqui você fala com quem defende seu interesse."
+    ]
+  },
+  {
+    icon: <Target className="w-9 h-9" />,
+    paragraphs: [
+      "Entregamos uma consultoria completa que valoriza seu imóvel, garante a satisfação dos usuários, otimizando o seu investimento."
+    ]
+  },
+  {
+    icon: <PencilRuler className="w-9 h-9" />,
+    paragraphs: [
+      "Desenvolvemos academias que refletem a identidade de cada cliente. Unimos conhecimento técnico, planejamento e criatividade para transformar necessidades em projetos exclusivos."
+    ]
+  }
+];
+
 const Benefits: React.FC = () => {
   return (
     <section id="benefits" className="py-24 bg-brand-dark relative">
       <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="max-w-7xl mx-auto">
             <SectionHeading subtitle="Diferenciais" title="Por que escolher a FITPRO?" align="center" />
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-            >
-              <img 
-                src={DIFERENCIAS} 
-                alt="Diferenciais FITPRO" 
-                className="w-full h-auto object-cover"
-              />
-            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6 mt-12">
+              {DIFERENCIAIS.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.15 }}
+                  className="bg-white/[0.02] border border-white/10 p-8 rounded-2xl hover:border-brand-orange/50 transition-colors flex flex-col items-center text-center"
+                >
+                  <div className="w-20 h-20 bg-brand-gray border border-white/10 rounded-full flex items-center justify-center mb-6 text-brand-orange">
+                    {item.icon}
+                  </div>
+                  <div className="space-y-3 text-gray-300 text-lg leading-relaxed">
+                    {item.paragraphs.map((t, i) => <p key={i}>{t}</p>)}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
           <div className="order-2 md:order-1 grid sm:grid-cols-2 gap-4 hidden">
             {BENEFITS.map((item, idx) => (
