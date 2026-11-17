@@ -20,7 +20,8 @@ import {
   MessageCircle,
   Truck,
   Handshake,
-  Fingerprint
+  Fingerprint,
+  Instagram
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import DSC01927 from './assets/img/DSC01927.jpg';
@@ -689,7 +690,7 @@ const Benefits: React.FC = () => {
                   transition={{ delay: idx * 0.15 }}
                   className="bg-white/[0.02] border border-white/10 p-8 rounded-2xl hover:border-brand-orange/50 transition-colors flex flex-col items-center text-center"
                 >
-                  <div className="w-20 h-20 bg-brand-gray border border-white/10 rounded-full flex items-center justify-center mb-6 text-brand-orange">
+                  <div className="w-20 h-20 bg-brand-orange/10 border border-brand-orange/40 shadow-lg shadow-brand-orange/10 rounded-full flex items-center justify-center mb-6 text-brand-orange">
                     {item.icon}
                   </div>
                   <div className="space-y-3 text-gray-300 text-lg leading-relaxed">
@@ -1043,6 +1044,16 @@ const Contact: React.FC = () => {
 const Footer: React.FC = () => {
   return (
     <footer className="py-8 bg-black text-center border-t border-white/5">
+      <a
+        href="https://www.instagram.com/fitprosolucoes"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram da FitPro"
+        className="inline-flex items-center gap-2 mb-4 text-gray-300 hover:text-brand-orange transition-colors"
+      >
+        <Instagram size={20} />
+        <span className="text-sm font-semibold">@fitprosolucoes</span>
+      </a>
       <p className="text-gray-500 text-sm">
         &copy; {new Date().getFullYear()} FitPro Soluções em Academias. Todos os direitos reservados.
       </p>
