@@ -1060,16 +1060,6 @@ const Contact: React.FC = () => {
 const Footer: React.FC = () => {
   return (
     <footer className="py-8 bg-black text-center border-t border-white/5">
-      <a
-        href="https://www.instagram.com/fitprosolucoes"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram da FitPro"
-        className="inline-flex items-center gap-2 mb-4 text-gray-300 hover:text-brand-orange transition-colors"
-      >
-        <Instagram size={20} />
-        <span className="text-sm font-semibold">@fitprosolucoes</span>
-      </a>
       <p className="text-gray-500 text-sm">
         &copy; {new Date().getFullYear()} FitPro Soluções em Academias. Todos os direitos reservados.
       </p>
