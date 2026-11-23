@@ -40,6 +40,21 @@ import  SAOMIGUEL from './assets/img/TujuFOTO.jpg';
 import  GUADALUPE from './assets/img/GuadalupeFOTO.jpg';
 import  CASALTA from './assets/img/Casa AltaFOTO.jpg';
 import  CASASERRAMBI from './assets/img/SerrambiFOTO.jpg';
+import GAL_PROJ3_070619 from './assets/img/GAL_PROJ3_070619.jpg';
+import GAL_PROJ3_070432 from './assets/img/GAL_PROJ3_070432.jpg';
+import GAL_PROJ3_070427 from './assets/img/GAL_PROJ3_070427.jpg';
+import GAL_PROJ3_000052 from './assets/img/GAL_PROJ3_000052.jpg';
+import GAL_PROJ3_000219 from './assets/img/GAL_PROJ3_000219.jpg';
+import GAL_IMG_3403 from './assets/img/GAL_IMG_3403.jpg';
+import GAL_IMG_3393 from './assets/img/GAL_IMG_3393.jpg';
+import GAL_IMG_3395 from './assets/img/GAL_IMG_3395.jpg';
+import GAL_IMG_3390 from './assets/img/GAL_IMG_3390.jpg';
+import GAL_IMG_3391 from './assets/img/GAL_IMG_3391.jpg';
+import GAL_IMG_3482 from './assets/img/GAL_IMG_3482.jpg';
+import GAL_IMG_3473 from './assets/img/GAL_IMG_3473.jpg';
+import GAL_IMG_3470 from './assets/img/GAL_IMG_3470.jpg';
+import GAL_IMG_3446 from './assets/img/GAL_IMG_3446.jpg';
+import GAL_IMG_3455 from './assets/img/GAL_IMG_3455.jpg';
 import SOCIOFUNDADOR from './assets/img/SOCIOFUNDADOR.jpeg';
 import FitproLogo from './FitproLogo';
 
@@ -784,16 +799,35 @@ const Cases: React.FC = () => {
   );
 };
 
-const GALLERY_IMAGES = [
-  { src: GALERIA4, alt: 'Visão ampla academia' },
-  { src: GALERIA1, alt: 'Academia geral' },
-  { src: GALERIA3, alt: 'Equipamento de musculação' },
-  { src: GALERIA2, alt: 'Halteres Alpha Strong' },
-  { src: GALERIA5, alt: 'Exercício leg press' },
-  { src: DSC01927, alt: 'Ambiente planejado 1' },
-  { src: DSC01934, alt: 'Ambiente planejado 2' },
-  { src: DSC01957, alt: 'Ambiente planejado 3' },
-  { src: IMG_0220, alt: 'Detalhe de layout' },
+const GALLERY_GROUPS: { src: string; alt: string }[][] = [
+  [
+    { src: GALERIA4, alt: 'Visão ampla da academia' },
+    { src: GALERIA3, alt: 'Academia com vista para o jardim' },
+    { src: DSC01957, alt: 'Ambiente planejado' },
+    { src: GALERIA5, alt: 'Equipamento de pernas' },
+    { src: GALERIA1, alt: 'Rack de halteres' },
+  ],
+  [
+    { src: GAL_PROJ3_070619, alt: 'Academia - visão geral' },
+    { src: GAL_PROJ3_070432, alt: 'Academia - equipamentos' },
+    { src: GAL_PROJ3_070427, alt: 'Academia - ambiente' },
+    { src: GAL_PROJ3_000052, alt: 'Academia - detalhe' },
+    { src: GAL_PROJ3_000219, alt: 'Academia - layout' },
+  ],
+  [
+    { src: GAL_IMG_3403, alt: 'Studio de treino claro' },
+    { src: GAL_IMG_3393, alt: 'Estação funcional e esteira' },
+    { src: GAL_IMG_3395, alt: 'Esteira e bolas suíças' },
+    { src: GAL_IMG_3390, alt: 'Estação multifuncional' },
+    { src: GAL_IMG_3391, alt: 'Estação multifuncional e bicicleta' },
+  ],
+  [
+    { src: GAL_IMG_3482, alt: 'Studio de treino escuro' },
+    { src: GAL_IMG_3473, alt: 'Espaço funcional' },
+    { src: GAL_IMG_3470, alt: 'Estação de musculação' },
+    { src: GAL_IMG_3446, alt: 'Halteres ajustáveis' },
+    { src: GAL_IMG_3455, alt: 'Detalhe de halter' },
+  ],
 ];
 
 const Testimonials: React.FC = () => {
@@ -868,6 +902,9 @@ Hoje, à frente da FITPRO, ofereço consultoria técnica independente, focada em
 };
 
 const Gallery: React.FC = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleGroups = showAll ? GALLERY_GROUPS : GALLERY_GROUPS.slice(0, 2);
+  const GALLERY_IMAGES = visibleGroups.flat();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [orientation, setOrientation] = useState<'portrait' | 'landscape' | 'square' | null>(null);
 
@@ -905,32 +942,48 @@ const Gallery: React.FC = () => {
     <section id="gallery" className="py-24 bg-brand-dark">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading subtitle="Portfólio" title="Galeria de Imagens" align="center" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GALLERY_IMAGES.map((item, idx) => (
-            <motion.button
-              key={idx}
-              type="button"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 focus:outline-none"
-              onClick={() => setOpenIndex(idx)}
-            >
-              <img
-                src={item.src}
-                alt={item.alt}
-                loading="lazy"
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-xs font-medium text-white/80">FitPro</span>
-                <span className="px-3 py-1 text-xs rounded-full bg-brand-orange text-white">Projeto</span>
+        <div className="space-y-4 md:space-y-6">
+          {visibleGroups.map((group, gi) => {
+            const offset = visibleGroups.slice(0, gi).reduce((n, g) => n + g.length, 0);
+            return (
+              <div key={gi} className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                {group.map((item, i) => (
+                  <motion.button
+                    key={i}
+                    type="button"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className={`group relative rounded-xl md:rounded-2xl overflow-hidden border border-white/10 bg-white/5 focus:outline-none ${
+                      i === 0 ? 'col-span-2 md:row-span-2 aspect-[16/10] md:aspect-auto' : 'aspect-[4/3]'
+                    }`}
+                    onClick={() => setOpenIndex(offset + i)}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </motion.button>
+                ))}
               </div>
-            </motion.button>
-          ))}
+            );
+          })}
         </div>
+        {!showAll && (
+          <div className="mt-10 text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="px-8 py-3 rounded-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-colors font-medium"
+            >
+              Ver mais projetos
+            </button>
+          </div>
+        )}
       </div>
 
       <AnimatePresence>
